@@ -1,0 +1,104 @@
+/*Chartjs Style*/
+
+* {
+  margin: 1%;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(250, 250, 250, 1);
+}
+
+.h1{
+  margin-left: 100em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.array-inputs {
+  display: block;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.algo-type{
+  display: block;
+  margin-left: 1em;
+  margin-bottom: -2em;
+}
+
+.algorithm-one {
+  display: block;
+  margin-left: 1em;
+  margin-bottom: -2em;
+
+}
+
+.algorithm-two {
+  display: block;
+  margin-left: 1em;
+  margin-bottom: -2em;
+  
+}
+
+.dataset-collection{
+  display: block;
+  margin-left: 1em;
+  margin-bottom: 2em;
+}
+
+.drop-down{
+  width: 300px;
+}
+
+.algo-add-margin{
+  margin-left: 4.9em;
+}
+
+.type-add-margin{
+  margin-left: 1.6em;
+}
+.generate-button {
+  display: block;
+  margin: 0 auto;
+  width: 10em;
+  height: 3em;
+  box-shadow: 5px 5px 8px  rgba(135, 135, 135, 1);
+  background-color: rgba(250, 250, 250, 0.5);
+}
+
+.generate-button-text {
+  display: block;
+  margin: 0 auto;
+  font-weight: bold;
+  background-color: rgba(250, 250, 250, 0.5);
+}
+
+.chartBox {
+  display: block;
+  justify-content: center;
+  margin: 0 auto;
+  width: 700px;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid 1px rgba(255, 26, 104, 1);
+  background: rgba(250, 250, 250, 0.5);
+}
+#myChartDiv{
+  visibility: hidden;
+}
+
+#myChartDiv.show{
+  visibility: visible;
+  animation: fadeInChart 0.5s;
+}
+
+@-webkit-keyframes fadeInChart {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeInChart {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* End Chartjs Style*/

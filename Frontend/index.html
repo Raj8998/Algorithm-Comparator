@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Algorithm Comparator</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/statusBar.css">
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="JS/script.js"></script>
+    <h1 align="center">ALGORITHM COMPARATOR</h1>
+    <div class="array-inputs">
+        <div class="algo-type">
+            Type of Algorithm :
+            <select name="algoTypes" id="algoTypes" class="drop-down type-add-margin">
+                <option value="select">--Select--</option>
+                <script>
+                    generateTypes("algoTypes");
+                </script>
+            </select>
+        </div>
+        <br />
+        <div class="algorithm-one">
+            Algorithm 1 :
+            <select name="algoSub1Types" id="algoSub1Types" class="drop-down algo-add-margin">
+                <option value="select">--Select--</option>
+                <script>
+                    $('select#algoTypes').on('change', function () {
+                        var selected = $('#algoTypes option:selected').val();
+                        generateSubTypeListFromType(selected, "algoSub1Types");
+                    });
+                </script>
+            </select>
+        </div>
+        <div class="algorithm-two">
+            <br />
+            Algorithm 2 :
+            <select name="algoSub2Types" id="algoSub2Types" class="drop-down algo-add-margin">
+                <option value="select">--Select--</option>
+                <script>
+                    $('select#algoTypes').on('change', function () {
+                        var selected = $('#algoTypes option:selected').val();
+                        generateSubTypeListFromType(selected, "algoSub2Types");
+                    });
+                </script>
+            </select>
+        </div>
+        <br />
+        <div class="dataset-collection">
+            Data Set Selection :
+            <select name="dataSetSelect" id="dataSetSelect" class="drop-down">
+                <option value="select">--Select--</option>
+                <script>
+                    $('select#algoSub1Types').on('change', function () {
+                        $('select#algoSub2Types').on('change', function () {
+                            var selectedAlgorithm = $('#algoSub1Types option:selected').val();
+                            var selectedAlgorithm2 = $('#algoSub2Types option:selected').val();
+                            getDataSetList(selectedAlgorithm, selectedAlgorithm2, "dataSetSelect");
+                        });
+                    });
+                </script>
+            </select>
+        </div>
+    </div>
+    <button class="generate-button" type="button" onclick="SendData()">
+        <div class="generate-button-text">Generate Results</div>
+    </button>
+    <section>
+        <div id="myChartDiv" class="chartBox">
+            <canvas id="myChart" style="width:100%;max-width: 100%;"></canvas>
+        </div>
+    </section>
+    <div id="snackbar"></div>
+</body>
+
+</html>
